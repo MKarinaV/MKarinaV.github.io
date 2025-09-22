@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Галерея рецептів</title>
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header.header {
+  text-align: center;
+  padding: 20px;
+  background: #ffe0b2;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 20px;
+  background: #fff3e0;
+}
+
+.filters label {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filters input[type="radio"] {
+  margin-right: 5px;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; 
+}
+
+.card h2 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.card hr {
+  width: 80%;
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.card span {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+footer.footer {
+  text-align: center;
+  padding: 15px;
+  background: #ffe0b2;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+
+/* телефон */
+@media (min-width: 375px) and (max-width: 730px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Планшет */
+@media (min-width: 730px) and (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* комп */
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    height: 400px; 
+  }
+  .card img {
+    height: 200px; 
+    object-fit: cover;
+    align-self: flex-start; 
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>Моя Книга Рецептів</h1>
+</header>
+
+<section class="filters">
+  <div class="filter-type">
+    <label><input type="radio" name="type" checked> Всі</label>
+    <label><input type="radio" name="type"> Торти</label>
+    <label><input type="radio" name="type"> Печиво</label>
+    <label><input type="radio" name="type"> Пироги</label>
+  </div>
+  <div class="filter-calories">
+    <label>Менше 300 ккал</label>
+    <label>300–500 ккал</label>
+    <label>500+ ккал</label>
+  </div>
+</section>
+
+<section class="gallery">
+  <article class="card">
+    <img src="tort.jpg" alt="Торт шоколадний">
+    <h2>Торт шоколадний</h2>
+    <p>Інгредієнти: шоколад, борошно, яйця</p>
+    <hr>
+    <span>350 ккал</span>
+  </article>
+
+  <article class="card">
+    <img src="pecenie.jpg" alt="Печиво з горіхами">
+    <h2>Печиво з горіхами</h2>
+    <p>Інгредієнти: горіхи, мед, борошно</p>
+    <hr>
+    <span>280 ккал</span>
+  </article>
+
+  <article class="card">
+    <img src="pirog.jpg" alt="Пиріг з ягодами">
+    <h2>Пиріг з ягодами</h2>
+    <p>Інгредієнти: ягоди, тісто, цукор</p>
+    <hr>
+    <span>400 ккал</span>
+  </article>
+
+  <article class="card">
+    <img src="keks.jpg" alt="Кекс ванільний">
+    <h2>Кекс ванільний</h2>
+    <p>Інгредієнти: ваніль, яйця, молоко</p>
+    <hr>
+    <span>320 ккал</span>
+  </article>
+
+  
+  <article class="card">
+    <img src="napoleon.jpg" alt="Наполеон">
+    <h2>Наполеон</h2>
+    <p>Інгредієнти: борошно, яйця, молоко</p>
+    <hr>
+    <span>500 ккал</span>
+  </article>
+
+   <article class="card">
+    <img src="Croissants.jpg" alt="Круасани">
+    <h2>Круасани</h2>
+    <p>Інгредієнти: ваніль, яйця, молоко</p>
+    <hr>
+    <span>270 ккал</span>
+  </article>
+
+  <article class="card">
+    <img src="rulet.jpg" alt="Рулет">
+    <h2>Рулет</h2>
+    <p>Інгредієнти: борошно, яйця, молоко</p>
+    <hr>
+    <span>500 ккал</span>
+  </article>
+
+  <article class="card">
+    <img src="tiramisy.jpg" alt="Тірамісу">
+    <h2>Тірамісу</h2>
+    <p>Інгредієнти: какао, яйця, молоко</p>
+    <hr>
+    <span>340 ккал</span>
+  </article>
+
+  <article class="card">
+    <img src="sinabonu.jpg" alt="Сінабони">
+    <h2>Сінабони</h2>
+    <p>Інгредієнти: борошно, яйця, дріжжі</p>
+    <hr>
+    <span>620 ккал</span>
+  </article>
+</section>
+
+<footer class="footer">
+  © 2025 Моя Книга Рецептів 
+  Контакти:+380988946345
+</footer>
+
+</body>
+</html>
